@@ -26,6 +26,3 @@ def pregunta_13():
     resultado = merged.groupby("c1")["c5b"].sum()
 
     return resultado
-
-
-print(pregunta_13())

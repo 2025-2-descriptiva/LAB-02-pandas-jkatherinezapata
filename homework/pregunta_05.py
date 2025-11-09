@@ -23,6 +23,3 @@ def pregunta_05():
     df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
     maximos = df.groupby("c1")["c2"].max()
     return maximos
-
-
-print(pregunta_05())

@@ -23,6 +23,3 @@ def pregunta_04():
     df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
     promedio = df.groupby("c1")["c2"].mean()
     return promedio
-
-
-print(pregunta_04())

@@ -24,5 +24,3 @@ def pregunta_07():
     suma = df.groupby("c1")["c2"].sum()
     return suma
 
-
-print(pregunta_07())

@@ -19,6 +19,3 @@ def pregunta_06():
     valores = df["c4"].unique()
     valores_mayus = sorted([v.upper() for v in valores])
     return valores_mayus
-
-
-print(pregunta_06())

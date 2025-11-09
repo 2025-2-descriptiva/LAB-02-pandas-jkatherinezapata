@@ -24,6 +24,3 @@ def pregunta_03():
     df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
     conteo = df["c1"].value_counts().sort_index()
     return conteo
-
-
-print(pregunta_03())

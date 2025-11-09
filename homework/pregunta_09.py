@@ -27,6 +27,3 @@ def pregunta_09():
     df["year"] = df["c3"].astype(str).str.split("-").str[0]
 
     return df
-
-
-print(pregunta_09())
