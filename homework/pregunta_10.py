@@ -23,9 +23,10 @@ def pregunta_10():
     df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
 
     out = (
-        df.groupby("c1")["c2"]
-          .apply(lambda s: ":".join(map(str, sorted(s))))
+        df.groupby("c1", sort=True)["c2"]
+          .apply(lambda s: ":".join(map(str, sorted(s.astype(int)))))
           .to_frame(name="c2")
     )
     out.index.name = "_c1"
+
     return out
