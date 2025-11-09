@@ -22,15 +22,12 @@ def pregunta_10():
     """
     df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
 
-    # Agrupar por c1, ordenar c2 y concatenar con ':'
     out = (
         df.groupby("c1")["c2"]
           .apply(lambda s: ":".join(map(str, sorted(s))))
           .to_frame(name="c2")
     )
-
-    # Asignar el nombre correcto del índice (así lo exige el test)
-    out.index.name = "c1"
+    out.index.name = "_c1"
 
     return out
 print(pregunta_10())
