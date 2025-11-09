@@ -27,6 +27,7 @@ def pregunta_10():
           .apply(lambda s: ":".join(map(str, sorted(s))))
           .to_frame(name="c2")
     )
+    out.index.name = "_c1"   # <- detalle que exige el test
 
     return out
 print(pregunta_10())
