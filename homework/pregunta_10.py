@@ -24,9 +24,10 @@ def pregunta_10():
 
     out = (
         df.groupby("c1", sort=True)["c2"]
-          .apply(lambda s: ":".join(map(str, sorted(s.astype(int)))))
+          .apply(lambda s: ":".join(map(str, sorted(s))))
           .to_frame(name="c2")
     )
+
     out.index.name = "_c1"
 
     return out

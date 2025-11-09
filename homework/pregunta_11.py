@@ -23,10 +23,12 @@ def pregunta_11():
     39   39    a,d,f
     """
     df = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+
     out = (
-        df.groupby("c0")["c4"]
+        df.groupby("c0", sort=True)["c4"]
           .apply(lambda s: ",".join(sorted(s)))
-          .to_frame(name="c4")
+          .reset_index()
     )
 
     return out
+

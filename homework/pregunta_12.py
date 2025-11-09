@@ -23,10 +23,11 @@ def pregunta_12():
     39   39                    ggg:3,hhh:8,jjj:5
     """
     df = pd.read_csv("files/input/tbl2.tsv", sep="\t")
+
     df["c5"] = df["c5a"].astype(str) + ":" + df["c5b"].astype(str)
 
     out = (
-        df.groupby("c0")["c5"]
+        df.groupby("c0", sort=True)["c5"]
           .apply(lambda s: ",".join(sorted(s)))
           .reset_index()
     )

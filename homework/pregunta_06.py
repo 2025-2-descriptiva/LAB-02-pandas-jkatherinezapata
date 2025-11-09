@@ -16,6 +16,5 @@ def pregunta_06():
 
     """
     df = pd.read_csv("files/input/tbl1.tsv", sep="\t")
-    valores = df["c4"].unique()
-    valores_mayus = sorted([v.upper() for v in valores])
-    return valores_mayus
+    valores = sorted(df["c4"].str.upper().unique().tolist())
+    return valores
