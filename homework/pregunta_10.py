@@ -28,6 +28,4 @@ def pregunta_10():
           .to_frame(name="c2")
     )
     out.index.name = "_c1"
-
     return out
-print(pregunta_10())
